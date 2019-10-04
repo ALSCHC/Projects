@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title th:text="#{text.titulo}">TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/estilo.css" rel="stylesheet" type="text/css"
+    </head>
+    <body>
+        <fieldset id="rcorners2">
+            <legend>
+                <span th:text="#{text.titulo2}"></span>
+                
+            </legend>
+            <form th:action="@{/index}" th:object="${aritmetica}" method="post">
+            <label for="n1" th:text="#{text.n1}"></label>
+            <input id="n1" type="number" th:field="*{numero1}" />
+            <label for="n2" th:text="#{text.n2}"></label>
+            <input id="n2" type="number" th:field="*{numero2}" />
+            <br/>
+            <input type="submit" value="Calcular" />
+            <input type="reset" value="Limpiar" />
+            <br />
+            <label th:text="${txtRes}"></label>
+            </form>
+        </fieldset>
+    </body>
+</html>
